@@ -2,7 +2,7 @@
 
 # HawkEye
 
-HawkEye is a dynamic malware analysis tool based on [frida.re](https://www.frida.re/) framework. It will hook common functions to log malware activities and output the results in a nice web page report.
+HawkEye is a malware dynamic instrumentation tool based on [frida.re](https://www.frida.re/) framework. It will hook common functions to log malware activities and output the results in a nice web page report.
 
 This is not a sandbox so please use it in a safe sandboxed environment.
 
