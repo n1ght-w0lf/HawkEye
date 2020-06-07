@@ -74,7 +74,7 @@ HawkEye runs in 2 modes:
 
 # Example Report
 
-<img src="report/images/report.gif" />
+<img src="https://i.imgur.com/LiZlDhL.gif" />
 
 I've also uploaded a video for a full report from analysis to final results.
 
