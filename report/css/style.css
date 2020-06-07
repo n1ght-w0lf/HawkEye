@@ -1,0 +1,91 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+	background: #1E1E2E;
+	color: #FEFEFE;
+	padding: 20px;
+}
+
+a {
+	outline: none;
+}
+
+.list-group {
+	overflow-y: auto;
+	max-height: 360px;
+}
+
+.list-group-item {
+	background: transparent;
+	border-bottom-color: #505050;
+	font-size: 1.1em;
+}
+
+.activity-secion {
+	background: #27293D;
+	padding: 15px;
+	max-height: 550px;
+	border-radius: 7px;
+	margin-bottom: 30px;
+}
+
+#process-flow {
+	max-height: 700px;
+}
+
+.btn {
+	background-color: DodgerBlue;
+	border: none;
+	color: white;
+	padding: 7px 12px;
+	font-size: 16px;
+	cursor: pointer;
+	margin-left: 5px;
+	margin-bottom: 15px;
+}
+
+.btn:hover {
+	background-color: RoyalBlue;
+}
+
+#logo {
+	position: fixed;
+	overflow: hidden;
+}
+
+.sidenav {
+	height: 260px;
+	width: 240px;
+	position: fixed;
+	z-index: 1;
+	top: 290px;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	border-radius: 0px 22px 22px 0px;
+	margin-top: -200px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	background: linear-gradient(to top, #3258F4, #1D8BF7);
+}
+
+.sidenav a {
+	padding: 6px 6px 6px 25px;
+	text-decoration: none;
+	font-size: 21px;
+	color: #FFFFFF;
+	display: block;
+}
+
+.sidenav a:hover {
+	color: #f1f1f1;
+}
+
+.sidenav i {
+	width: 37px;
+}

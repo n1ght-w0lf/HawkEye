@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HawkEye</title>
+	<link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="libs/fontawesome/css/all.min.css">
+	<script type="text/javascript" src="libs/jquery/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="libs/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="libs/d3/d3.min.js"></script>
+	<script type="text/javascript" src="libs/dagre-d3/dagre-d3.min.js"></script>
+	<script type="text/javascript" src="libs/panzoom/panzoom.js"></script>
+
+	<script type="text/javascript" src="js/loader.js"></script>	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="logo">
+		<img src="/imgs/logo.png" width="270" height="100">
+	</div>
+<!-- 	<div class="sidenav">
+		<a href="#process-flow"><i class="fas fa-project-diagram"></i>Process Flow</a>
+		<a href="#file-activity"><i class="fas fa-file"></i>File activity</a>
+		<a href="#network-activity"><i class="fas fa-globe"></i>Network activity</a>
+		<a href="#registry-activity"><i class="fas fa-cogs"></i>Registry activity</a>
+		<a href="#general-activity"><i class="fas fa-info-circle"></i>General activity</a>
+	</div>
+ -->
+ 	<div class="container activity-secion" id="process-flow">
+		<h2 class="section-title">Process Flow</h2>
+		
+		<div style="text-align: right">
+			<button class="btn" id="processzoomInButton"><i class="fas fa-plus"></i></button>
+			<button class="btn" id="processzoomOutButton"><i class="fas fa-minus"></i></button>
+			<button class="btn" id="processresetButton"><i class="fa fa-undo"></i></button>
+		</div>
+
+		<div style="max-height: 500px; background: #04121c;">
+			<div id='panzoom-element'>
+				<svg width=2000 height=100% style="margin: 50px 0 50px -450px;"></svg>
+			</div>
+		</div>
+	</div>
+
+	<div class="container activity-secion" id="file-activity">
+		<h2 class="section-title">File Activity</h2>
+		<br>
+
+		<ul class="nav nav-pills" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" data-toggle="tab" id="file-created" href="#fileCreate">Created </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" id="file-modified" href="#fileModify">Modified </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" id="file-deleted" href="#fileDelete">Deleted </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" id="file-moved" href="#fileMove">Moved </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" id="file-copied" href="#fileCopy">Copied </a>
+			</li>
+		</ul>
+
+		<div class="tab-content">
+			<div id="fileCreate" class="container tab-pane active"><br>
+				<ul class="list-group list-group-flush" id="file-created-list">
+				</ul>
+			</div>
+			<div id="fileModify" class="container tab-pane fade"><br>
+				<ul class="list-group list-group-flush" id="file-modified-list">
+				</ul>
+			</div>
+			<div id="fileDelete" class="container tab-pane fade"><br>
+				<ul class="list-group list-group-flush" id="file-deleted-list">
+				</ul>
+			</div>		
+			<div id="fileMove" class="container tab-pane fade"><br>
+				<ul class="list-group list-group-flush" id="file-moved-list">
+				</ul>
+			</div>	
+			<div id="fileCopy" class="container tab-pane fade"><br>
+				<ul class="list-group list-group-flush" id="file-copied-list">
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container activity-secion" id="network-activity">
+		<h2 class="section-title">Network Activity</h2>
+		<br>
+
+		<ul class="nav nav-pills" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" data-toggle="tab" id="network-urls" href="#networkURLs">URLs </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" id="network-dns" href="#networkDNS">DNS </a>
+			</li>
+		</ul>
+
+		<div class="tab-content">
+			<div id="networkURLs" class="container tab-pane active"><br>
+				<ul class="list-group list-group-flush" id="network-urls-list">
+				</ul>
+			</div>
+			<div id="networkDNS" class="container tab-pane fade"><br>
+				<ul class="list-group list-group-flush" id="network-dns-list">
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container activity-secion" id="registry-activity">
+		<h2 class="section-title">Registry Activity</h2>
+		<br>
+
+		<ul class="nav nav-pills" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" data-toggle="tab" id="registry-set" href="#regSet">Set </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" id="registry-queried" href="#regQuery">Queried </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" id="registry-deleted" href="#regDel">Deleted </a>
+			</li>
+		</ul>
+
+		<div class="tab-content">
+			<div id="regSet" class="container tab-pane active"><br>
+				<ul class="list-group list-group-flush" id="registry-set-list">
+				</ul>
+			</div>
+			<div id="regQuery" class="container tab-pane fade"><br>
+				<ul class="list-group list-group-flush" id="registry-queried-list">
+				</ul>
+			</div>
+			<div id="regDel" class="container tab-pane fade"><br>
+				<ul class="list-group list-group-flush" id="registry-deleted-list">
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container activity-secion" id="general-activity">
+		<h2 class="section-title">General Activity</h2>
+		<br>
+
+		<ul class="nav nav-pills" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" data-toggle="tab" id="general-commands" href="#generalCommands">Executed Commands </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" id="general-imports" href="#generalImports">Dynamic Imports </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" id="general-mutexes" href="#generalMutexes">Mutexes </a>
+			</li>
+		</ul>
+
+		<div class="tab-content">
+			<div id="generalCommands" class="container tab-pane active"><br>
+				<ul class="list-group list-group-flush" id="general-commands-list">
+				</ul>
+			</div>
+			<div id="generalImports" class="container tab-pane fade"><br>
+				<ul class="list-group list-group-flush" id="general-imports-list">
+				</ul>
+			</div>
+			<div id="generalMutexes" class="container tab-pane fade"><br>
+				<ul class="list-group list-group-flush" id="general-mutexes-list">
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
