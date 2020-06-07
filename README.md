@@ -69,7 +69,6 @@ HawkEye runs in 2 modes:
 #### General:
 
 - LoadLibrary
-
 - GetProcAddress
 - CreateMutex
 
