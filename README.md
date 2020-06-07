@@ -1,4 +1,4 @@
-<img src="report/images/logo2.png" width=400 height=180 />
+<img src="report/images/logo2.png" width=430 height=180 />
 
 # HawkEye
 
