@@ -41,36 +41,36 @@ HawkEye runs in 2 modes:
 
 #### Processes:
 
-- CreateProcessInternalW
-- OpenProcess
-- VirtualAllocEx
+- <a href="#">CreateProcessInternalW</a>
+- <a href="#">OpenProcess</a>
+- <a href="#">VirtualAllocEx</a>
 
 #### Files:
 
-- CreateFile
-- WriteFile
-- MoveFile
-- CopyFile
-- DeleteFile
+- <a href="#">CreateFile</a>
+- <a href="#">WriteFile</a>
+- <a href="#">MoveFile</a>
+- <a href="#">CopyFile</a>
+- <a href="#">DeleteFile</a>
 
 #### Registry:
 
-- RegCreateKey
-- RegOpenKey
-- RegQueryValueEx
-- RegSetValueEx
-- RegDeleteValue
+- <a href="#">RegCreateKey</a>
+- <a href="#">RegOpenKey</a>
+- <a href="#">RegQueryValueEx</a>
+- <a href="#">RegSetValueEx</a>
+- <a href="#">RegDeleteValue</a>
 
 #### Network:
 
-- InternetOpenUrl
-- GetAddrInfo
+- <a href="#">InternetOpenUrl</a>
+- <a href="#">GetAddrInfo</a>
 
 #### General:
 
-- LoadLibrary
-- GetProcAddress
-- CreateMutex
+- <a href="#">LoadLibrary</a>
+- <a href="#">GetProcAddress</a>
+- <a href="#">CreateMutex</a>
 
 # Example Report
 
